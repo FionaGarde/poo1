@@ -8,12 +8,14 @@ class Impot{
     const TAUX1 = 0.15;
     const TAUX2 = 0.20;
 
+    //permet d'afficher un message avec le montant de l'impôt à payer
     public function AfficheImpot(){
         $taux = $this->CalculImpot();
         echo $this->_name.' votre impôts est de '.$taux.'€.';
     }
 
-    public function CalculImpot(): int{
+    //permet de calculer le montant de l'impôt 
+    private function CalculImpot(): int{
         if($this->_revenu<= 15000)
             return $this->_revenu * self::TAUX1;
         $b = $this->_revenu - 15000;

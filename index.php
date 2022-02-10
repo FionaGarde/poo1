@@ -1,5 +1,6 @@
 <?php
 require('impot.php');
+//evite d'afficher des tableau error quand les champs sons vides
 if(!empty($_POST["name"]) && !empty($_POST["revenu"])){
     $form = new Impot($_POST["name"], $_POST["revenu"]);
     echo $form->AfficheImpot();
